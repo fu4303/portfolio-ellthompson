@@ -12,10 +12,17 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
     },
+    resolve: {
+        modules: [
+            path.join(__dirname, './app'),
+            "node_modules"
+        ]
+    },
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
+                include: path.resolve(__dirname, './app'),
                 exclude: [/node_modules/],
                 use: [{
                     loader: 'babel-loader',
