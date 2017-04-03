@@ -5,8 +5,12 @@ import SpaceMonoItalic from 'fonts/Space_Mono/SpaceMono-Italic.ttf';
 import SpaceMonoBoldItalic from 'fonts/Space_Mono/SpaceMono-BoldItalic.ttf';
 
 injectGlobal`
-    body {
+    html, body {
         margin: 0px;
+        height: 100%;
+    }
+    a {
+        text-decoration: none;
     }
     @font-face {
         font-family: SpaceMonoRegular;
@@ -36,13 +40,17 @@ const getFontType = p => {
 const getColour = p => {
     if (p.blue) return 'blue';
     else if (p.red) return 'red';
+    else if (p.white) return 'white';
+    else if (p.lightblack) return 'rgba(0,0,0,0.7)';
     else return 'black';
 }
 
 const getBGColour = p => {
-    if (p.bluebg) return 'blue';
+    if (p.slatebg) return '#3d495f';
+    else if (p.lightbluebg) return '#cff4ff';
+    else if (p.coralbg) return '#f5cfb3';
     else if (p.redbg) return 'red';
-    else return 'white';
+    else return 'none';
 }
 
 // Layout
@@ -77,6 +85,9 @@ export const Wrapper = styled.div`
         if (p.centerboth || p.justifycenter) return 'center';
         else if (p.justifyspacebetween) return 'space-between';
     }};
+    overflow: ${p => p.overflowauto ? 'auto' : 'none'};
+    height: ${p => p.height};
+    min-height: ${p => p.minheight};
 `;
 
 // Elements
@@ -96,25 +107,24 @@ export const SubTitle = styled.h2`
 
 export const P = styled.p`
     font-family: ${getFontType};
-    font-size: 16px;
+    font-size: ${p => {
+        if (p.lead) return '24px';
+        else if (p.small) return '8px';
+        else return '16px';
+    }};
     color: ${getColour};
     margin: 8px 0;
 `;
 
 export const Text = styled.span`
     font-family: ${getFontType};
-    font-size: 16px;
+    font-size: ${p => {
+        if (p.lead) return '24px';
+        else if (p.small) return '12px';
+        else if (p.xsmall) return '8px';
+        else return '16px';
+    }};
     color: ${getColour};
-`;
-
-export const LeadText = styled.span`
-    font-family: ${getFontType};
-    font-size: 24px;
-    color: ${getColour};
-`;
-
-export const SmallText = styled.span`
-    font-family: ${getFontType};
-    font-size: 8px;
-    color: ${getColour};
+    transition: font-size 0.5s;
+    text-align: ${p => p.center ? 'center' : 'none'};
 `;

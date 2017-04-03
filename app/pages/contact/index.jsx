@@ -1,9 +1,13 @@
 import React from 'react';
-import { Wrapper, FlexCentered, Title, Text, LeadText, SmallText, Paragraph }  from 'styles';
+import { Wrapper, Title, P }  from 'styles';
 
 const Contact = () => (
-    <Wrapper margin>
-        <Title bold>Contact</Title>
+    <Wrapper coralbg overflowauto minheight='calc(100% - 133px)'>
+        <Wrapper margin >
+            <Title lightblack >Contact</Title>
+            <P>Email: ellth92@gmail.com</P>
+            <P>Twitter: @ellt92</P>
+        </Wrapper>
     </Wrapper>
 );
 
