@@ -8,7 +8,6 @@ injectGlobal`
     body {
         margin: 0px;
     }
-
     @font-face {
         font-family: SpaceMonoRegular;
         src: url('${SpaceMonoRegular}') format('opentype');
@@ -34,6 +33,12 @@ const getFontType = p => {
     else return 'SpaceMonoRegular';
 }
 
+const getColour = p => {
+    if (p.blue) return 'blue';
+    else if (p.red) return 'red';
+    else return 'black';
+}
+
 // Layout
 export const FlexCentered = styled.div`
     display: flex;
@@ -49,6 +54,16 @@ export const Wrapper = styled.div`
         margin-left: ${p => p.spacechildren ? '0px' : 'none'};
     }
     margin: ${p => p.margin ? '24px' : 'inherit'};
+    margin: ${p => {
+        if (p.margin) return '24px';
+        else if (p.thinmargin) return '16px';
+        else return 'none';
+    }};
+    padding: ${p => {
+        if (p.padding) return '24px';
+        else if (p.thinpadding) return '16px';
+        else return 'none';
+    }};
 `;
 
 // Elements
@@ -56,37 +71,37 @@ export const Title = styled.h1`
     font-family: ${getFontType};
     font-size: 40px;
     margin: 24px 0;
-    color: paleblue;
+    color: ${getColour};
 `;
 
 export const SubTitle = styled.h2`
     font-family: ${getFontType};
     font-size: 32px;
     margin: 16px 0;
-    color: palevioletred;
+    color: ${getColour};
 `;
 
-export const Paragraph = styled.p`
+export const P = styled.p`
     font-family: ${getFontType};
     font-size: 16px;
-    color: black;
+    color: ${getColour};
     margin: 8px 0;
 `;
 
 export const Text = styled.span`
     font-family: ${getFontType};
     font-size: 16px;
-    color: black;
+    color: ${getColour};
 `;
 
 export const LeadText = styled.span`
     font-family: ${getFontType};
     font-size: 24px;
-    color: black;
+    color: ${getColour};
 `;
 
 export const SmallText = styled.span`
     font-family: ${getFontType};
     font-size: 8px;
-    color: black;
+    color: ${getColour};
 `;
