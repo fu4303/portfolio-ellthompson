@@ -4,8 +4,11 @@ import SpaceMonoBold from 'fonts/Space_Mono/SpaceMono-Bold.ttf';
 import SpaceMonoItalic from 'fonts/Space_Mono/SpaceMono-Italic.ttf';
 import SpaceMonoBoldItalic from 'fonts/Space_Mono/SpaceMono-BoldItalic.ttf';
 
-// Fonts
 injectGlobal`
+    body {
+        margin: 0px;
+    }
+
     @font-face {
         font-family: SpaceMonoRegular;
         src: url('${SpaceMonoRegular}') format('opentype');
@@ -36,6 +39,16 @@ export const FlexCentered = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+`;
+
+export const Wrapper = styled.div`
+    * {
+        margin-left: ${p => p.spacechildren ? '24px' : 'none'};
+    }
+    *:first-child {
+        margin-left: ${p => p.spacechildren ? '0px' : 'none'};
+    }
+    margin: ${p => p.margin ? '24px' : 'inherit'};
 `;
 
 // Elements
