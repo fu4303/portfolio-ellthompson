@@ -16,7 +16,8 @@ module.exports = {
         modules: [
             path.join(__dirname, './app'),
             "node_modules"
-        ]
+        ],
+        extensions: ['.js', '.jsx']
     },
     module: {
         loaders: [
@@ -28,6 +29,10 @@ module.exports = {
                     loader: 'babel-loader',
                     options: { presets: ['es2015', 'react'] }
                 }],
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
+                loader: 'file-loader',
             }
         ],
     },
