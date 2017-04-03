@@ -43,7 +43,7 @@ export const Title = styled.h1`
     font-family: ${getFontType};
     font-size: 40px;
     margin: 24px 0;
-    color: palevioletred;
+    color: paleblue;
 `;
 
 export const SubTitle = styled.h2`
