@@ -1,13 +1,14 @@
 import React from 'react';
-import { LeadText, Text }  from 'styles';
 import { Link } from 'react-router-dom';
 
-import { Wrapper } from 'styles';
+import { Wrapper, LeadText, Text }  from 'styles';
 
 const Nav = () => (
-    <Wrapper spacechildren margin>
-        <Link to='/'><LeadText>Elliott Thompson</LeadText></Link>
-        <Link to='/contact'><Text>Contact</Text></Link>
+    <Wrapper margin flex aligncenter justifyspacebetween >
+        <Link to='/'><LeadText bold >Elliott Thompson</LeadText></Link>
+        <Wrapper spacechildren >
+            <Link to='/contact'><Text bold >Contact</Text></Link>
+        </Wrapper>
     </Wrapper>
 );
 

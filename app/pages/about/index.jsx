@@ -1,10 +1,10 @@
 import React from 'react';
-import { FlexCentered, Title, Text, LeadText, SmallText, Paragraph }  from 'styles';
+import { Wrapper, FlexCentered, Title, Text, LeadText, SmallText, Paragraph }  from 'styles';
 
 const About = () => (
-    <div>
+    <Wrapper margin >
         <Title bold>About</Title>
-    </div>
+    </Wrapper>
 );
 
 export default About;

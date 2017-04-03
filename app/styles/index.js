@@ -39,6 +39,12 @@ const getColour = p => {
     else return 'black';
 }
 
+const getBGColour = p => {
+    if (p.bluebg) return 'blue';
+    else if (p.redbg) return 'red';
+    else return 'white';
+}
+
 // Layout
 export const FlexCentered = styled.div`
     display: flex;
@@ -53,7 +59,7 @@ export const Wrapper = styled.div`
     *:first-child {
         margin-left: ${p => p.spacechildren ? '0px' : 'none'};
     }
-    margin: ${p => p.margin ? '24px' : 'inherit'};
+    margin: ${p => p.margin ? '24px' : 'none'};
     margin: ${p => {
         if (p.margin) return '24px';
         else if (p.thinmargin) return '16px';
@@ -63,6 +69,13 @@ export const Wrapper = styled.div`
         if (p.padding) return '24px';
         else if (p.thinpadding) return '16px';
         else return 'none';
+    }};
+    background-color: ${getBGColour};
+    display: ${p => p.flex ? 'flex' : 'block'};
+    align-items: ${p => p.centerboth || p.aligncenter ? 'center' : 'none'};
+    justify-content: ${p => {
+        if (p.centerboth || p.justifycenter) return 'center';
+        else if (p.justifyspacebetween) return 'space-between';
     }};
 `;
 

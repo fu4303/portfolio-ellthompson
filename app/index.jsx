@@ -6,6 +6,7 @@ import Nav from 'components/nav';
 import Homepage from 'pages/homepage';
 import Contact from 'pages/contact';
 import About from 'pages/about';
+import Footer from 'components/footer';
 
 const root = document.createElement('div');
 document.body.insertBefore(root, document.body.firstElementChild);
@@ -17,6 +18,7 @@ ReactDOM.render(
             <Route exact path='/' component={Homepage}/>
             <Route path='/contact' component={Contact}/>
             <Route path='/about' component={About}/>
+            <Footer/>
         </div>
     </Router>,
     root
