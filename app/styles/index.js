@@ -1,8 +1,16 @@
-import styled, { injectGlobal } from 'styled-components';
+import styled, { injectGlobal,css } from 'styled-components';
 import SpaceMonoRegular from 'fonts/Space_Mono/SpaceMono-Regular.ttf';
 import SpaceMonoBold from 'fonts/Space_Mono/SpaceMono-Bold.ttf';
 import SpaceMonoItalic from 'fonts/Space_Mono/SpaceMono-Italic.ttf';
 import SpaceMonoBoldItalic from 'fonts/Space_Mono/SpaceMono-BoldItalic.ttf';
+
+export const media = {
+    phone: (...args) => css`
+        @media (max-width: 640px) {
+            ${ css(...args) }
+        }
+    `
+}
 
 injectGlobal`
     html, body {
@@ -54,10 +62,10 @@ const getBGColour = p => {
 }
 
 // Layout
-export const FlexCentered = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const Container = styled.div`
+    max-width: 1124px;
+    margin: 0 auto;
+    padding: 0 24px;
 `;
 
 export const Wrapper = styled.div`
@@ -67,15 +75,14 @@ export const Wrapper = styled.div`
     *:first-child {
         margin-left: ${p => p.spacechildren ? '0px' : 'none'};
     }
-    margin: ${p => p.margin ? '24px' : 'none'};
     margin: ${p => {
-        if (p.margin) return '24px';
-        else if (p.thinmargin) return '16px';
+        if (p.margin) return '24px 0';
+        else if (p.thinmargin) return '16px 0';
         else return 'none';
     }};
     padding: ${p => {
-        if (p.padding) return '24px';
-        else if (p.thinpadding) return '16px';
+        if (p.padding) return '24px 0';
+        else if (p.thinpadding) return '16px 0';
         else return 'none';
     }};
     background-color: ${getBGColour};
@@ -114,6 +121,9 @@ export const P = styled.p`
     }};
     color: ${getColour};
     margin: 8px 0;
+    ${media.phone`
+        text-align: justify;
+    `}
 `;
 
 export const Text = styled.span`
