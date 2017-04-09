@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -33,10 +34,15 @@ module.exports = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
                 loader: 'file-loader',
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
             }
-        ],
+        ]
     },
     plugins: [
+        new ExtractTextPlugin('bundle.css'),
         new HtmlWebpackPlugin({
             title: 'Elliott Thompson'
         })

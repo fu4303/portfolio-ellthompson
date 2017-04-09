@@ -8,14 +8,14 @@ const navLink = (to, text) => {
     return (<Link to={to}><Text bold white lead={isSelected} >{text}</Text></Link>);
 };
 
+                //<Wrapper spacechildren >
+                    //{ navLink('/contact', 'Contact') }
+                //</Wrapper>
 const Header = () => (
     <Wrapper slatebg >
         <Container>
             <Wrapper padding flex aligncenter justifyspacebetween slatebg minheight='36px' >
                 { navLink('/', 'Elliott Thompson') }
-                <Wrapper spacechildren >
-                    { navLink('/contact', 'Contact') }
-                </Wrapper>
             </Wrapper>
         </Container>
     </Wrapper>

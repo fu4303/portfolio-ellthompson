@@ -116,14 +116,16 @@ export const P = styled.p`
     font-family: ${getFontType};
     font-size: ${p => {
         if (p.lead) return '24px';
-        else if (p.small) return '8px';
+        else if (p.small) return '12px';
+        else if (p.xsmall) return '8px';
         else return '16px';
     }};
     color: ${getColour};
     margin: 8px 0;
     ${media.phone`
-        text-align: justify;
+        text-align: ${p => p.center ? 'center' : 'justify'};
     `}
+    text-align: ${p => p.center ? 'center' : 'none'};
 `;
 
 export const Text = styled.span`

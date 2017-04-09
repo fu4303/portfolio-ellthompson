@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
+import 'font-awesome/css/font-awesome.css';
 import { Wrapper }  from 'styles';
 
 import Homepage from 'pages/homepage';
@@ -24,9 +25,6 @@ ReactDOM.render(
         <Wrapper height='100%'>
             <Header/>
             <Route exact path='/' component={Homepage}/>
-            <Route path='/contact' component={Contact}/>
-            <Route path='/about' component={About}/>
-            <Route path='/test' component={Test}/>
             <Footer/>
         </Wrapper>
     </Router>,
