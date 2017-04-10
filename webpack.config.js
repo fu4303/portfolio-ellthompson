@@ -44,7 +44,8 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('bundle.css'),
         new HtmlWebpackPlugin({
-            title: 'Elliott Thompson'
+            title: 'Elliott Thompson',
+            favicon: 'favicon.jpg'
         })
     ]
 };

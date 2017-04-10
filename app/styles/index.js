@@ -6,7 +6,7 @@ import SpaceMonoBoldItalic from 'fonts/Space_Mono/SpaceMono-BoldItalic.ttf';
 
 export const media = {
     phone: (...args) => css`
-        @media (max-width: 640px) {
+        @media and screen (max-width: 640px) {
             ${ css(...args) }
         }
     `
