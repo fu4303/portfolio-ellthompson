@@ -45,7 +45,8 @@ module.exports = {
         new ExtractTextPlugin('bundle.css'),
         new HtmlWebpackPlugin({
             title: 'Elliott Thompson',
-            favicon: 'favicon.jpg'
+            favicon: 'favicon.jpg',
+            template: 'index.ejs'
         })
     ]
 };

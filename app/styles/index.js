@@ -13,7 +13,7 @@ export const media = {
 }
 
 injectGlobal`
-    html, body {
+    html, body, #root {
         margin: 0px;
         height: 100%;
     }
@@ -86,6 +86,7 @@ export const Wrapper = styled.div`
         else return 'none';
     }};
     background-color: ${getBGColour};
+    background-image: ${p => p.bgi ? `url(${p.bgi})` : null};
     display: ${p => p.flex ? 'flex' : 'block'};
     align-items: ${p => p.centerboth || p.aligncenter ? 'center' : 'none'};
     justify-content: ${p => {
@@ -93,6 +94,7 @@ export const Wrapper = styled.div`
         else if (p.justifyspacebetween) return 'space-between';
     }};
     overflow: ${p => p.overflowauto ? 'auto' : 'none'};
+    width: ${p => p.width};
     height: ${p => p.height};
     min-height: ${p => p.minheight};
 `;

@@ -7,8 +7,6 @@ import { Wrapper }  from 'styles';
 
 import Homepage from 'pages/homepage';
 import Contact from 'pages/contact';
-import About from 'pages/about';
-import Test from 'pages/test';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
@@ -25,8 +23,9 @@ ReactDOM.render(
         <Wrapper height='100%'>
             <Header/>
             <Route exact path='/' component={Homepage}/>
+            <Route exact path='/contact' component={Contact}/>
             <Footer/>
         </Wrapper>
     </Router>,
-    document.body
+    document.getElementById('root')
 );
