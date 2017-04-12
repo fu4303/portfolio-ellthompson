@@ -6,36 +6,43 @@ const Icon = styled.i`
     font-size: 40px;
 `;
 
+const ContactWrapper = styled(Wrapper)`
+    backgroundColor: rgba(144, 144, 144, 0.25);
+    borderRadius: 7px;
+    margin: 8px;
+    padding: 8px;
+`;
+
 const Contact = () => (
     <Wrapper coralbg overflowauto minheight='calc(100% - 177px)' >
         <Container>
             <Wrapper margin >
                 <Title lightblack >Contact</Title>
                 <Wrapper flex justifycenter >
-                    <Wrapper width='50%'>
+                    <ContactWrapper>
                         <a href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'>
-                            <P lightblack ><Icon className="fa fa-envelope"></Icon></P>
-                            <P lightblack >Email</P>
+                            <P lightblack center ><Icon className="fa fa-envelope"></Icon></P>
+                            <P lightblack center >Email</P>
                         </a>
-                    </Wrapper>
-                    <Wrapper width='50%'>
+                    </ContactWrapper>
+                    <ContactWrapper>
                         <a href='http://github.com/ellt92' target='_blank'>
-                            <P lightblack ><Icon className="fa fa-github"></Icon></P>
-                            <P lightblack >Github</P>
+                            <P lightblack center ><Icon className="fa fa-github"></Icon></P>
+                            <P lightblack center >Github</P>
                         </a>
-                    </Wrapper>
-                    <Wrapper width='50%'>
+                    </ContactWrapper>
+                    <ContactWrapper>
                         <a href='http://linkedin.com/in/ellt92' target='_blank'>
-                            <P lightblack ><Icon className="fa fa-linkedin"></Icon></P>
-                            <P lightblack >LinkedIn</P>
+                            <P lightblack center ><Icon className="fa fa-linkedin"></Icon></P>
+                            <P lightblack center >LinkedIn</P>
                         </a>
-                    </Wrapper>
-                    <Wrapper width='50%'>
+                    </ContactWrapper>
+                    <ContactWrapper>
                         <a href='http://twitter.com/ellt92' target='_blank'>
-                            <P lightblack ><Icon className="fa fa-twitter"></Icon></P>
-                            <P lightblack >Twitter</P>
+                            <P lightblack center ><Icon className="fa fa-twitter"></Icon></P>
+                            <P lightblack center >Twitter</P>
                         </a>
-                    </Wrapper>
+                    </ContactWrapper>
                 </Wrapper>
             </Wrapper>
         </Container>
