@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -7,25 +7,44 @@ import { Wrapper }  from 'styles';
 
 import Homepage from 'pages/homepage';
 import Contact from 'pages/contact';
+import Blog from 'pages/blog';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
 
-window.onload = () => {
-    const webhostImage = document.querySelector('img[alt="www.000webhost.com"]');
-    if (webhostImage) {
-        webhostImage.style = 'display: none;';
+/*
+ * Global Config
+ */
+const CONFIG = {
+    SHOW_BLOG: false
+};
+
+class App extends Component {
+    getChildContext() {
+        return {
+            CONFIG
+        };
     }
+    render() {
+        return (
+            <Router>
+                <Wrapper height='100%'>
+                    <Header/>
+                    <Route exact path='/' component={Homepage}/>
+                    <Route exact path='/contact' component={Contact}/>
+                    <Route exact path='/blog' component={Blog}/>
+                    <Footer/>
+                </Wrapper>
+            </Router>
+        );
+    }
+}
+
+App.childContextTypes = {
+      CONFIG: PropTypes.object
 };
 
 ReactDOM.render(
-    <Router>
-        <Wrapper height='100%'>
-            <Header/>
-            <Route exact path='/' component={Homepage}/>
-            <Route exact path='/contact' component={Contact}/>
-            <Footer/>
-        </Wrapper>
-    </Router>,
+    <App/>,
     document.getElementById('root')
 );
