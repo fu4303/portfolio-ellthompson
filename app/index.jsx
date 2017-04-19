@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ import Footer from 'components/footer';
  * Global Config
  */
 const CONFIG = {
-    SHOW_BLOG: false
+    SHOW_BLOG: true
 };
 
 class App extends Component {

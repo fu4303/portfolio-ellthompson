@@ -49,15 +49,14 @@ const getColour = p => {
     if (p.blue) return 'blue';
     else if (p.red) return 'red';
     else if (p.white) return 'white';
-    else if (p.lightblack) return 'rgba(0,0,0,0.7)';
-    else return 'black';
+    else return 'rgba(0,0,0,0.7)';
 }
 
 const getBGColour = p => {
     if (p.slatebg) return '#3d495f';
     else if (p.lightbluebg) return '#cff4ff';
     else if (p.coralbg) return '#f5cfb3';
-    else if (p.redbg) return 'red';
+    else if (p.limebg) return '#d2f1d0';
     else return 'none';
 }
 
@@ -88,6 +87,7 @@ export const Wrapper = styled.div`
     background-color: ${getBGColour};
     background-image: ${p => p.bgi ? `url(${p.bgi})` : null};
     display: ${p => p.flex ? 'flex' : 'block'};
+    flex-direction: ${p => p.rowreverse ? 'row-reverse' : null}
     align-items: ${p => p.centerboth || p.aligncenter ? 'center' : 'none'};
     justify-content: ${p => {
         if (p.centerboth || p.justifycenter) return 'center';
@@ -107,7 +107,7 @@ export const Title = styled.h1`
     color: ${getColour};
 `;
 
-export const SubTitle = styled.h2`
+export const SubTitle = styled.h3`
     font-family: ${getFontType};
     font-size: 32px;
     margin: 16px 0;
