@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Wrapper, Container, LeadText, Text }  from 'styles';
 
 const navLink = (to, text) => {
-    const isSelected = location.hash == `#${to}`;
+    const isSelected = location.hash.includes(`#${to}`);
     return (<Link to={to}><Text bold white lead={isSelected} >{text}</Text></Link>);
 };
 
