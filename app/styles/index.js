@@ -3,6 +3,9 @@ import SpaceMonoRegular from 'fonts/Space_Mono/SpaceMono-Regular.ttf';
 import SpaceMonoBold from 'fonts/Space_Mono/SpaceMono-Bold.ttf';
 import SpaceMonoItalic from 'fonts/Space_Mono/SpaceMono-Italic.ttf';
 import SpaceMonoBoldItalic from 'fonts/Space_Mono/SpaceMono-BoldItalic.ttf';
+import CardoRegular from 'fonts/Cardo/Cardo-Regular.ttf';
+import CardoItalic from 'fonts/Cardo/Cardo-Italic.ttf';
+import CardoBold from 'fonts/Cardo/Cardo-Bold.ttf';
 
 export const media = {
     phone: (...args) => css`
@@ -36,13 +39,31 @@ injectGlobal`
         font-family: SpaceMonoBoldItalic;
         src: url('${SpaceMonoBoldItalic}') format('opentype');
     }
+    @font-face {
+        font-family: CardoRegular;
+        src: url('${CardoRegular}') format('opentype');
+    }
+    @font-face {
+        font-family: CardoItalic;
+        src: url('${CardoItalic}') format('opentype');
+    }
+    @font-face {
+        font-family: CardoBold;
+        src: url('${CardoBold}') format('opentype');
+    }
 `
 
-const getFontType = p => {
+const getTitleFontType = p => {
     if (p.bold && p.italic) return 'SpaceMonoBoldItalic';
     else if (p.bold) return 'SpaceMonoBold';
     else if (p.italic) return 'SpaceMonoItalic';
     else return 'SpaceMonoRegular';
+}
+
+const getFontType = p => {
+    if (p.bold) return 'CardoBold';
+    else if (p.italic) return 'CardoItalic';
+    else return 'CardoRegular';
 }
 
 const getColour = p => {
@@ -101,14 +122,14 @@ export const Wrapper = styled.div`
 
 // Elements
 export const Title = styled.h1`
-    font-family: ${getFontType};
+    font-family: ${getTitleFontType};
     font-size: 40px;
     margin: 24px 0;
     color: ${getColour};
 `;
 
 export const SubTitle = styled.h3`
-    font-family: ${getFontType};
+    font-family: ${getTitleFontType};
     font-size: 32px;
     margin: 16px 0;
     color: ${getColour};
