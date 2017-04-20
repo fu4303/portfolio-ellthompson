@@ -131,11 +131,11 @@ export const P = styled.p`
 `;
 
 export const Divider = styled.div`
-    width: calc(100% - 32px);
+    width: calc(100% - 64px);
     height: 1px;
-    background-color: rgba(0,0,0,0.7);
-    padding-left: 16px;
-    padding-right: 16px;
+    background-color: rgba(0,0,0,0.3);
+    padding-left: 32px;
+    padding-right: 32px;
 `;
 
 export const Text = styled.span`

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Wrapper, Container, Title, P, Text, Divider }  from 'styles';
+import { Wrapper, Container, Title, P, Text }  from 'styles';
 
 const Icon = styled.i`
     font-size: 40px;
