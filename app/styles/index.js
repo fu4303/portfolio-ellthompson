@@ -130,6 +130,14 @@ export const P = styled.p`
     text-align: ${p => p.center ? 'center' : 'none'};
 `;
 
+export const Divider = styled.div`
+    width: calc(100% - 32px);
+    height: 1px;
+    background-color: rgba(0,0,0,0.7);
+    padding-left: 16px;
+    padding-right: 16px;
+`;
+
 export const Text = styled.span`
     font-family: ${getFontType};
     font-size: ${p => {
