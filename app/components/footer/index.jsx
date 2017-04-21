@@ -13,7 +13,7 @@ const Footer = () => (
             <Text>&nbsp;&nbsp;&nbsp;</Text>
             <a href='http://twitter.com/ellt92' target='_blank'><Text lead lightblack ><i className="fa fa-twitter"></i></Text></a>
         </P>
-        <P center small lightblack >Elliott Thompson 2017</P>
+        <P center small lightblack >© Elliott Thompson 2017</P>
     </Wrapper>
 );
 

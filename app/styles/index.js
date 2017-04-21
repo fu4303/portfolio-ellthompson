@@ -160,7 +160,7 @@ export const Divider = styled.div`
 `;
 
 export const Text = styled.span`
-    font-family: ${getFontType};
+    font-family: ${p => p.title ? getTitleFontType : getFontType};
     font-size: ${p => {
         if (p.lead) return '24px';
         else if (p.small) return '12px';

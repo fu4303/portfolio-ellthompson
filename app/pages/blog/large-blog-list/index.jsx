@@ -10,7 +10,7 @@ const LargeBlogList = () => {
     const items = BlogPosts;
     return (
         <Wrapper>
-                <Title>Blog Posts</Title>
+                <Title>Posts</Title>
                 {
                     _.map(items, item => [
                         <Wrapper>
