@@ -1,24 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
-import { Wrapper, Container, LeadText, Text }  from 'styles';
+import { Wrapper, Container, P, LeadText, Text, media }  from 'styles';
+
+const StyledLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    ${media.phone`
+        padding: 8px 0;
+        justify-content: center;
+    `}
+`;
+
+const StyledNav = styled(Wrapper)`
+    ${media.phone`
+        flex-direction: column;
+    `}
+`;
+
+const StyledSubNav = styled(Wrapper)`
+    ${media.phone`
+        justify-content: center;
+    `}
+`;
 
 const navLink = (to, text) => {
     const isSelected = location.hash.includes(`#${to}`);
-    return (<Link to={to}><Text bold white title lead={isSelected} >{text}</Text></Link>);
+    return (<StyledLink to={to}><Text bold white title lead={isSelected} >{text}</Text></StyledLink>);
 };
 
 const Header = ({children}, context) => (
     <Wrapper slatebg >
         <Container>
-            <Wrapper padding flex aligncenter justifyspacebetween slatebg minheight='36px' >
+            <StyledNav padding flex aligncenter justifyspacebetween slatebg minheight='36px' >
                 { navLink('/', 'Elliott Thompson') }
-                <Wrapper spacechildren >
+                <StyledSubNav spacechildren flex aligncenter >
                     { context.CONFIG.SHOW_BLOG && navLink('/blog', 'Blog') }
                     { navLink('/contact', 'Contact') }
-                </Wrapper>
-            </Wrapper>
+                </StyledSubNav>
+            </StyledNav>
         </Container>
     </Wrapper>
 );

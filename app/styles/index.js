@@ -9,7 +9,7 @@ import CardoBold from 'fonts/Cardo/Cardo-Bold.ttf';
 
 export const media = {
     phone: (...args) => css`
-        @media and screen (max-width: 640px) {
+        @media (max-width: 640px) {
             ${ css(...args) }
         }
     `

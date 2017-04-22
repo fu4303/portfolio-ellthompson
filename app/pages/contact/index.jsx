@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Wrapper, Container, Title, P, Text }  from 'styles';
+import { media, Wrapper, Container, Title, P, Text }  from 'styles';
 
 const Icon = styled.i`
     font-size: 40px;
@@ -11,13 +11,15 @@ const ContactWrapper = styled(Wrapper)`
     borderRadius: 7px;
     margin: 8px;
     padding: 8px;
+    ${media.phone`
+        width: 100%;
+    `}
 `;
 
 const Contact = () => (
     <Wrapper coralbg overflowauto minheight='calc(100% - 177px)' >
         <Container>
             <Wrapper margin >
-                <Title lightblack >Contact</Title>
                 <Wrapper flex justifycenter >
                     <ContactWrapper>
                         <a href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'>
