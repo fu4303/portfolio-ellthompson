@@ -6,46 +6,51 @@ const Icon = styled.i`
     font-size: 40px;
 `;
 
-const ContactWrapper = styled(Wrapper)`
+const ItemWrapper = styled(Wrapper)`
     backgroundColor: rgba(144, 144, 144, 0.25);
     borderRadius: 7px;
     margin: 8px;
     padding: 8px;
+    width: calc(50% - 32px);
     ${media.phone`
         width: 100%;
     `}
+`;
+
+const ContactWrapper = styled(Wrapper)`
+    flex-wrap: wrap;
 `;
 
 const Contact = () => (
     <Wrapper coralbg overflowauto minheight='calc(100% - 177px)' >
         <Container>
             <Wrapper margin >
-                <Wrapper flex justifycenter >
-                    <ContactWrapper>
+                <ContactWrapper flex justifycenter >
+                    <ItemWrapper>
                         <a href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'>
                             <P lightblack center ><Icon className="fa fa-envelope"></Icon></P>
-                            <P lightblack center >Email</P>
+                            <P lightblack center >ellth92@gmail.com</P>
                         </a>
-                    </ContactWrapper>
-                    <ContactWrapper>
+                    </ItemWrapper>
+                    <ItemWrapper>
                         <a href='http://github.com/ellt92' target='_blank'>
                             <P lightblack center ><Icon className="fa fa-github"></Icon></P>
-                            <P lightblack center >Github</P>
+                            <P lightblack center >@ellt92</P>
                         </a>
-                    </ContactWrapper>
-                    <ContactWrapper>
+                    </ItemWrapper>
+                    <ItemWrapper>
                         <a href='http://linkedin.com/in/ellt92' target='_blank'>
                             <P lightblack center ><Icon className="fa fa-linkedin"></Icon></P>
-                            <P lightblack center >LinkedIn</P>
+                            <P lightblack center >/in/ellt92</P>
                         </a>
-                    </ContactWrapper>
-                    <ContactWrapper>
+                    </ItemWrapper>
+                    <ItemWrapper>
                         <a href='http://twitter.com/ellt92' target='_blank'>
                             <P lightblack center ><Icon className="fa fa-twitter"></Icon></P>
-                            <P lightblack center >Twitter</P>
+                            <P lightblack center >@ellt92</P>
                         </a>
-                    </ContactWrapper>
-                </Wrapper>
+                    </ItemWrapper>
+                </ContactWrapper>
             </Wrapper>
         </Container>
     </Wrapper>
