@@ -68,7 +68,7 @@ const getColour = p => {
 }
 
 const getBGColour = p => {
-    if (p.slatebg) return '#3d495f';
+    if (p.slatebg) return 'rgba(61, 73, 95, 0.75)';
     else if (p.lightbluebg) return '#cff4ff';
     else if (p.coralbg) return '#f5cfb3';
     else if (p.limebg) return '#d2f1d0';

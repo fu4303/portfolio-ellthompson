@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
     },
-    devtool: (ENV === 'development') ? 'source-map' : false,
+    devtool: (ENV === 'development') ? 'eval-source-map' : false,
     resolve: {
         modules: [
             path.join(__dirname, './app'),

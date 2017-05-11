@@ -26,15 +26,20 @@ const StyledSubNav = styled(Wrapper)`
     `}
 `;
 
+const HeaderElement = styled(Wrapper)`
+    position: absolute;
+    width: 100%;
+`;
+
 const navLink = (to, text) => {
     const isSelected = location.hash.includes(`#${to}`);
     return (<StyledLink to={to}><Text white title lead={isSelected} >{text}</Text></StyledLink>);
 };
 
 const Header = ({children}, context) => (
-    <Wrapper slatebg >
+    <HeaderElement slatebg >
         <Container>
-            <StyledNav padding flex aligncenter justifyspacebetween slatebg minheight='36px' >
+            <StyledNav padding flex aligncenter justifyspacebetween minheight='36px' >
                 { navLink('/', 'ELLIOTT THOMPSON') }
                 <StyledSubNav spacechildren flex aligncenter >
                     { context.CONFIG.SHOW_BLOG && navLink('/blog', 'BLOG') }
@@ -42,7 +47,7 @@ const Header = ({children}, context) => (
                 </StyledSubNav>
             </StyledNav>
         </Container>
-    </Wrapper>
+    </HeaderElement>
 );
 
 Header.contextTypes = {

@@ -1,9 +1,17 @@
 import React from 'react';
 
+import styled from 'styled-components';
 import { Wrapper, LeadText, Text, P }  from 'styles';
 
+const FooterItem = styled(Wrapper)`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+`;
+
 const Footer = () => (
-    <Wrapper justifycenter thinmargin >
+    <FooterItem justifycenter thinpadding >
         <P center lightblack >
             <a href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'><Text lead lightblack ><i className="fa fa-envelope"></i></Text></a>
             <Text>&nbsp;&nbsp;&nbsp;</Text>
@@ -14,7 +22,7 @@ const Footer = () => (
             <a href='http://twitter.com/ellt92' target='_blank'><Text lead lightblack ><i className="fa fa-twitter"></i></Text></a>
         </P>
         <P center small lightblack >© Elliott Thompson 2017</P>
-    </Wrapper>
+    </FooterItem>
 );
 
 export default Footer;

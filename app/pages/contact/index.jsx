@@ -21,8 +21,16 @@ const ContactWrapper = styled(Wrapper)`
     flex-wrap: wrap;
 `;
 
+const ContactPage = styled(Wrapper)`
+    padding-top: 84px;
+    ${media.phone`
+        flex-direction: column;
+        padding-top: 135px;
+    `}
+`;
+
 const Contact = () => (
-    <Wrapper coralbg overflowauto >
+    <ContactPage height='100%' overflowauto >
         <Container>
             <Wrapper margin >
                 <ContactWrapper flex justifycenter >
@@ -53,7 +61,7 @@ const Contact = () => (
                 </ContactWrapper>
             </Wrapper>
         </Container>
-    </Wrapper>
+    </ContactPage>
 );
 
 export default Contact;
