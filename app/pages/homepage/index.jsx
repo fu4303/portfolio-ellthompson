@@ -11,7 +11,7 @@ const Home = styled(Wrapper)`
 `;
 
 const Homepage = () => (
-    <Home overflowauto height='100%'>
+    <Home overflowauto >
         <Container>
             <Wrapper margin >
                 <Title lightblack >Hi there 👋</Title>

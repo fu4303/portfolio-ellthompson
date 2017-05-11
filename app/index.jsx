@@ -21,9 +21,9 @@ class ParticleBackground extends Component {
     componentDidMount() {
         const { config } = this.props;
         particleBackground(this.canvas, {
-            frames: 20,
-            particleCount: 40,
-            maxParticleDiameter: 180,
+            frames: /Mobi/.test(navigator.userAgent) ? 20 : 40,
+            particleCount: /Mobi/.test(navigator.userAgent) ? 30 : 100,
+            maxParticleDiameter: /Mobi/.test(navigator.userAgent) ? 80 : 160,
         });
     }
     render() {

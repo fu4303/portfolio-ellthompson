@@ -30,7 +30,7 @@ const ContactPage = styled(Wrapper)`
 `;
 
 const Contact = () => (
-    <ContactPage height='100%' overflowauto >
+    <ContactPage overflowauto >
         <Container>
             <Wrapper margin >
                 <ContactWrapper flex justifycenter >
