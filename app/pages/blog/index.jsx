@@ -8,7 +8,7 @@ import LargeBlogList from './large-blog-list';
 import BlogPost from './blog-post';
 
 const Blog = () => (
-    <Wrapper limebg overflowauto minheight='calc(100% - 177px)' >
+    <Wrapper limebg overflowauto >
         <Container>
             <Route exact path='/blog' component={LargeBlogList}/>
             <Route exact path='/blog/:slug' component={BlogPost}/>

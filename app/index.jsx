@@ -17,7 +17,7 @@ import Footer from 'components/footer';
  * Global Config
  */
 const CONFIG = {
-    SHOW_BLOG: false
+    SHOW_BLOG: true
 };
 
 class App extends Component {

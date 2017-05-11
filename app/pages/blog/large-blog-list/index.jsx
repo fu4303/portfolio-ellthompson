@@ -9,13 +9,12 @@ import BlogPosts from '../../../../blog-posts.json';
 const LargeBlogList = () => {
     const items = BlogPosts;
     return (
-        <Wrapper>
-                <Title>Posts</Title>
+        <Wrapper margin >
                 {
                     _.map(items, item => [
                         <Wrapper>
                             <Link to={`/blog/${item.slug}`}>
-                                <SubTitle>{item.title} <Text small >{moment(item.date).format("MMM Do YY")}</Text></SubTitle>
+                                <Title>{item.title} <Text small >{moment(item.date).format("MMM Do YY")}</Text></Title>
                                 <P>{item.shortContent}</P>
                             </Link>
                         </Wrapper>

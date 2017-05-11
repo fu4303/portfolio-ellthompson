@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper, Container, Title, Text, P }  from 'styles';
 
 const Homepage = () => (
-    <Wrapper lightbluebg overflowauto minheight='calc(100% - 177px)'>
+    <Wrapper lightbluebg overflowauto >
         <Container>
             <Wrapper margin >
                 <Title lightblack >Hi there 👋</Title>

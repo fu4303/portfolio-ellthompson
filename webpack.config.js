@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ENV = process.env.NODE_ENV || 'production';
 
 
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
     },
+    devtool: (ENV === 'development') ? 'source-map' : false,
     resolve: {
         modules: [
             path.join(__dirname, './app'),

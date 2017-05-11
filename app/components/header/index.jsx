@@ -28,17 +28,17 @@ const StyledSubNav = styled(Wrapper)`
 
 const navLink = (to, text) => {
     const isSelected = location.hash.includes(`#${to}`);
-    return (<StyledLink to={to}><Text bold white title lead={isSelected} >{text}</Text></StyledLink>);
+    return (<StyledLink to={to}><Text white title lead={isSelected} >{text}</Text></StyledLink>);
 };
 
 const Header = ({children}, context) => (
     <Wrapper slatebg >
         <Container>
             <StyledNav padding flex aligncenter justifyspacebetween slatebg minheight='36px' >
-                { navLink('/', 'Elliott Thompson') }
+                { navLink('/', 'ELLIOTT THOMPSON') }
                 <StyledSubNav spacechildren flex aligncenter >
-                    { context.CONFIG.SHOW_BLOG && navLink('/blog', 'Blog') }
-                    { navLink('/contact', 'Contact') }
+                    { context.CONFIG.SHOW_BLOG && navLink('/blog', 'BLOG') }
+                    { navLink('/contact', 'CONTACT') }
                 </StyledSubNav>
             </StyledNav>
         </Container>

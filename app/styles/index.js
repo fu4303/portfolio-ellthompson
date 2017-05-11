@@ -1,11 +1,10 @@
 import styled, { injectGlobal,css } from 'styled-components';
-import SpaceMonoRegular from 'fonts/Space_Mono/SpaceMono-Regular.ttf';
-import SpaceMonoBold from 'fonts/Space_Mono/SpaceMono-Bold.ttf';
-import SpaceMonoItalic from 'fonts/Space_Mono/SpaceMono-Italic.ttf';
-import SpaceMonoBoldItalic from 'fonts/Space_Mono/SpaceMono-BoldItalic.ttf';
-import CardoRegular from 'fonts/Cardo/Cardo-Regular.ttf';
-import CardoItalic from 'fonts/Cardo/Cardo-Italic.ttf';
-import CardoBold from 'fonts/Cardo/Cardo-Bold.ttf';
+import AdelleRegular from 'fonts/Adelle/AdelleSansBasic_Regular.woff2';
+import AdelleBold from 'fonts/Adelle/AdelleSansBasic_Bold.woff2';
+import PTRegular from 'fonts/PT_Serif/PT_Serif-Web-Regular.ttf';
+import PTItalic from 'fonts/PT_Serif/PT_Serif-Web-Italic.ttf';
+import PTBold from 'fonts/PT_Serif/PT_Serif-Web-Bold.ttf';
+import PTBoldItalic from 'fonts/PT_Serif/PT_Serif-Web-BoldItalic.ttf';
 
 export const media = {
     phone: (...args) => css`
@@ -24,46 +23,41 @@ injectGlobal`
         text-decoration: none;
     }
     @font-face {
-        font-family: SpaceMonoRegular;
-        src: url('${SpaceMonoRegular}') format('opentype');
+        font-family: AdelleRegular;
+        src: url('${AdelleRegular}') format('opentype');
     }
     @font-face {
-        font-family: SpaceMonoBold;
-        src: url('${SpaceMonoBold}') format('opentype');
+        font-family: AdelleBold;
+        src: url('${AdelleBold}') format('opentype');
     }
     @font-face {
-        font-family: SpaceMonoItalic;
-        src: url('${SpaceMonoItalic}') format('opentype');
+        font-family: PTRegular;
+        src: url('${PTRegular}') format('opentype');
     }
     @font-face {
-        font-family: SpaceMonoBoldItalic;
-        src: url('${SpaceMonoBoldItalic}') format('opentype');
+        font-family: PTBold;
+        src: url('${PTBold}') format('opentype');
     }
     @font-face {
-        font-family: CardoRegular;
-        src: url('${CardoRegular}') format('opentype');
+        font-family: PTBoldItalic;
+        src: url('${PTBoldItalic}') format('opentype');
     }
     @font-face {
-        font-family: CardoItalic;
-        src: url('${CardoItalic}') format('opentype');
-    }
-    @font-face {
-        font-family: CardoBold;
-        src: url('${CardoBold}') format('opentype');
+        font-family: PTItalic;
+        src: url('${PTItalic}') format('opentype');
     }
 `
 
 const getTitleFontType = p => {
-    if (p.bold && p.italic) return 'SpaceMonoBoldItalic';
-    else if (p.bold) return 'SpaceMonoBold';
-    else if (p.italic) return 'SpaceMonoItalic';
-    else return 'SpaceMonoRegular';
+    if (p.bold) return 'AdelleBold';
+    else return 'AdelleRegular';
 }
 
 const getFontType = p => {
-    if (p.bold) return 'CardoBold';
-    else if (p.italic) return 'CardoItalic';
-    else return 'CardoRegular';
+    if (p.bold && p.italic) return 'PTBoldItalic';
+    else if (p.bold) return 'PTBold';
+    else if (p.italic) return 'PTItalic';
+    else return 'PTRegular';
 }
 
 const getColour = p => {
@@ -124,14 +118,14 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
     font-family: ${getTitleFontType};
     font-size: 40px;
-    margin: 24px 0;
+    margin: 24px 0 8px;
     color: ${getColour};
 `;
 
 export const SubTitle = styled.h3`
     font-family: ${getTitleFontType};
     font-size: 32px;
-    margin: 16px 0;
+    margin: 16px 0 8px;
     color: ${getColour};
 `;
 

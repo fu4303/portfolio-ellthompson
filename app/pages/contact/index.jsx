@@ -22,7 +22,7 @@ const ContactWrapper = styled(Wrapper)`
 `;
 
 const Contact = () => (
-    <Wrapper coralbg overflowauto minheight='calc(100% - 177px)' >
+    <Wrapper coralbg overflowauto >
         <Container>
             <Wrapper margin >
                 <ContactWrapper flex justifycenter >

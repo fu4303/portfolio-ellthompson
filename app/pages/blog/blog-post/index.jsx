@@ -11,15 +11,18 @@ const BlogPost = ({match}) => {
     });
     if (item) {
         return (
-            <Wrapper>
+            <Wrapper margin >
                 <Title lightblack >{item.title} <Text small >{moment(item.date).format("MMM Do YY")}</Text></Title>
-                <Wrapper margin ><Text lead >{item.shortContent}</Text></Wrapper>
+                <P><Text lead >{item.shortContent}</Text></P>
                 <P><Text>{item.content}</Text></P>
             </Wrapper>
         );
     } else {
         return (
-            <Wrapper><Text>Blog post not found. Head to the main <Link to='/blog'>blog page</Link> if you'd like to browse.</Text></Wrapper>
+            <Wrapper margin >
+                <Title>404 - Uh oh... post not found.</Title>
+                <Text> Head to the main <Link to='/blog'>blog page</Link> if you'd like to have a browse through my posts.</Text>
+            </Wrapper>
         );
     }
 };
