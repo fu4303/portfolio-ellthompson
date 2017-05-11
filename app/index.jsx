@@ -19,6 +19,7 @@ class ParticleBackground extends Component {
         super(props);
     }
     componentDidMount() {
+        document.querySelector('img[alt="www.000webhost.com"]').style = 'display: none;'
         const { config } = this.props;
         particleBackground(this.canvas, {
             frames: /Mobi/.test(navigator.userAgent) ? 20 : 40,
