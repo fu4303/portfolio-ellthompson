@@ -80,6 +80,12 @@ export const Container = styled.div`
     max-width: 1124px;
     margin: 0 auto;
     padding: 0 24px;
+    display: ${p => p.flex ? 'flex' : 'block'};
+    justify-content: ${p => {
+        if (p.centerboth || p.justifycenter) return 'center';
+        else if (p.justifyspacebetween) return 'space-between';
+    }};
+    align-items: ${p => p.centerboth || p.aligncenter ? 'center' : 'none'};
 `;
 
 export const Wrapper = styled.div`
@@ -156,7 +162,9 @@ export const Divider = styled.div`
 export const Text = styled.span`
     font-family: ${p => p.title ? getTitleFontType : getFontType};
     font-size: ${p => {
-        if (p.lead) return '24px';
+        if (p.sizetitle) return '40px';
+        else if (p.sizesubtitle) return '32px';
+        else if (p.lead) return '24px';
         else if (p.small) return '12px';
         else if (p.xsmall) return '8px';
         else return '16px';
