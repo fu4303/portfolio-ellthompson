@@ -20,11 +20,13 @@ class ParticleBackground extends Component {
     }
     componentDidMount() {
         const { config } = this.props;
-        particleBackground(this.canvas, {
-            frames: /Mobi/.test(navigator.userAgent) ? 20 : 40,
-            particleCount: /Mobi/.test(navigator.userAgent) ? 30 : 100,
-            maxParticleDiameter: /Mobi/.test(navigator.userAgent) ? 80 : 160,
-        });
+        if (!/Mobi/.test(navigator.userAgent)) {
+            particleBackground(this.canvas, {
+                frames: 40,
+                particleCount: 100,
+                maxParticleDiameter: 160,
+            });
+        }
     }
     render() {
         const { width, height } = this.props;
@@ -89,9 +91,3 @@ ReactDOM.render(
     <App/>,
     document.getElementById('root')
 );
-
-setTimeout(() => {
-    if (document.querySelector('img[alt="www.000webhost.com"]')) {
-        document.querySelector('img[alt="www.000webhost.com"]').style = 'display: none;'
-    }
-}, 500);

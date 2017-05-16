@@ -11,6 +11,11 @@ export const media = {
         @media (max-width: 640px) {
             ${ css(...args) }
         }
+    `,
+    desktop: (...args) => css`
+        @media (min-width: 641px) {
+            ${ css(...args) }
+        }
     `
 }
 
@@ -171,5 +176,8 @@ export const Text = styled.span`
     }};
     color: ${getColour};
     transition: font-size 0.5s;
+    ${media.phone`
+        transition: font-size 0s;
+    `}
     text-align: ${p => p.center ? 'center' : 'none'};
 `;

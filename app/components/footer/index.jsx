@@ -1,13 +1,14 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { Wrapper, LeadText, Text, P }  from 'styles';
+import { media, Wrapper, LeadText, Text, P }  from 'styles';
 
 const FooterItem = styled(Wrapper)`
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.75);
+    ${media.desktop`
+        position: absolute;
+    `}
 `;
 
 const Footer = () => (
