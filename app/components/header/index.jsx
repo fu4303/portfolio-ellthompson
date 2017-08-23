@@ -29,6 +29,7 @@ const StyledSubNav = styled(Wrapper)`
 const HeaderElement = styled(Wrapper)`
     position: absolute;
     width: 100%;
+    z-index: 9999;
 `;
 
 const navLink = (to, text) => {

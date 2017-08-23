@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { media, Wrapper, Container, Title, P, Text }  from 'styles';
 
 const ContactPage = styled(Wrapper)`
+    position: relative;
     padding-top: 84px;
     height: calc(100% - 84px - 103px);
     display: flex;

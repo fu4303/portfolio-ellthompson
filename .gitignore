@@ -1,3 +1,5 @@
 blog-posts.json
 blog/*
 app.js
+node_modules
+dist/

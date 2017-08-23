@@ -20,13 +20,11 @@ class ParticleBackground extends Component {
     }
     componentDidMount() {
         const { config } = this.props;
-        if (!/Mobi/.test(navigator.userAgent)) {
-            particleBackground(this.canvas, {
-                frames: 40,
-                particleCount: 100,
-                maxParticleDiameter: 160,
-            });
-        }
+        particleBackground(this.canvas, {
+            frames: 40,
+            particleCount: 100,
+            maxParticleDiameter: 160,
+        });
     }
     render() {
         const { width, height } = this.props;
@@ -57,21 +55,25 @@ class App extends Component {
         };
     }
     componentDidMount() {
-        this.setState({
-            backgroundWidth: this.back.offsetWidth,
-            backgroundHeight: this.back.offsetHeight,
-        });
+        if (!/Mobi/.test(navigator.userAgent)) {
+            this.setState({
+                backgroundWidth: this.back.offsetWidth,
+                backgroundHeight: this.back.offsetHeight,
+            });
+        }
     }
     render() {
         const { backgroundWidth, backgroundHeight } = this.state;
         return (
             <Router>
                 <Wrapper height='100%'>
-                    <div ref={(c)=>this.back = c} style={{background: 'linear-gradient(45deg, rgb(204, 103, 255), rgb(0, 208, 255))', width: '100%', height: '100%', position: 'absolute', zIndex: '-9999'}}>
-                        { backgroundWidth > 0 &&
-                            <ParticleBackground width={`${backgroundWidth}px`} height={`${backgroundHeight}px`}/>
-                        }
-                    </div>
+                    { !/Mobi/.test(navigator.userAgent) && 
+                        <div ref={(c)=>this.back = c} style={{width: '100%', height: '100%', position: 'absolute'}}>
+                            { backgroundWidth > 0 &&
+                                <ParticleBackground width={`${backgroundWidth}px`} height={`${backgroundHeight}px`}/>
+                            }
+                        </div>
+                    }
                     <Header/>
                     <Route exact path='/' component={Homepage}/>
                     <Route exact path='/contact' component={Contact}/>

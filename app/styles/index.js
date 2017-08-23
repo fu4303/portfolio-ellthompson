@@ -20,9 +20,16 @@ export const media = {
 }
 
 injectGlobal`
-    html, body, #root {
+    html, body {
         margin: 0px;
         height: 100%;
+    }
+    #root {
+        //background: linear-gradient(45deg, rgb(204, 103, 255), rgb(0, 208, 255));
+        background: linear-gradient(45deg, rgb(255, 181, 253), rgb(97, 255, 248));
+        ${media.desktop`
+            height: 100%;
+        `}
     }
     a {
         text-decoration: none;
@@ -65,7 +72,7 @@ const getFontType = p => {
     else return 'PTRegular';
 }
 
-const getColour = p => {
+export const getColour = p => {
     if (p.blue) return 'blue';
     else if (p.red) return 'red';
     else if (p.white) return 'white';
