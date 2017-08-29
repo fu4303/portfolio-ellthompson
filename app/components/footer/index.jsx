@@ -5,6 +5,7 @@ import { media, Wrapper, LeadText, Text, P }  from 'styles';
 
 const FooterItem = styled(Wrapper)`
     width: 100%;
+    padding: 19px 0;
     background-color: rgba(255, 255, 255, 0.75);
     ${media.desktop`
         position: absolute;

@@ -16,6 +16,10 @@ module.exports = {
     },
     devtool: (ENV === 'development') ? 'eval-source-map' : false,
     resolve: {
+        alias: {
+            'react': 'preact-compat',
+            'react-dom': 'preact-compat'
+        },
         modules: [
             path.join(__dirname, './app'),
             "node_modules"

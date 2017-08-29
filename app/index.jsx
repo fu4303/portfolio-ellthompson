@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import { render, h, Component } from 'preact';
+import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import particleBackground from 'particle-background';
 
@@ -9,7 +9,6 @@ import { Wrapper }  from 'styles';
 
 import Homepage from 'pages/homepage';
 import Contact from 'pages/contact';
-import Blog from 'pages/blog';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
@@ -67,7 +66,7 @@ class App extends Component {
         return (
             <Router>
                 <Wrapper height='100%'>
-                    { !/Mobi/.test(navigator.userAgent) && 
+                    { !/Mobi/.test(navigator.userAgent) &&
                         <div ref={(c)=>this.back = c} style={{width: '100%', height: '100%', position: 'absolute'}}>
                             { backgroundWidth > 0 &&
                                 <ParticleBackground width={`${backgroundWidth}px`} height={`${backgroundHeight}px`}/>
@@ -77,7 +76,6 @@ class App extends Component {
                     <Header/>
                     <Route exact path='/' component={Homepage}/>
                     <Route exact path='/contact' component={Contact}/>
-                    <Route path='/blog' component={Blog}/>
                     <Footer/>
                 </Wrapper>
             </Router>
@@ -89,7 +87,7 @@ App.childContextTypes = {
       CONFIG: PropTypes.object
 };
 
-ReactDOM.render(
+render(
     <App/>,
     document.getElementById('root')
 );

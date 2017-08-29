@@ -1,10 +1,6 @@
 import styled, { injectGlobal,css } from 'styled-components';
 import AdelleRegular from 'fonts/Adelle/AdelleSansBasic_Regular.woff2';
-import AdelleBold from 'fonts/Adelle/AdelleSansBasic_Bold.woff2';
 import PTRegular from 'fonts/PT_Serif/PT_Serif-Web-Regular.ttf';
-import PTItalic from 'fonts/PT_Serif/PT_Serif-Web-Italic.ttf';
-import PTBold from 'fonts/PT_Serif/PT_Serif-Web-Bold.ttf';
-import PTBoldItalic from 'fonts/PT_Serif/PT_Serif-Web-BoldItalic.ttf';
 
 export const media = {
     phone: (...args) => css`
@@ -17,7 +13,7 @@ export const media = {
             ${ css(...args) }
         }
     `
-}
+};
 
 injectGlobal`
     html, body {
@@ -38,46 +34,22 @@ injectGlobal`
         font-family: AdelleRegular;
         src: url('${AdelleRegular}') format('opentype');
     }
-    @font-face {
-        font-family: AdelleBold;
-        src: url('${AdelleBold}') format('opentype');
-    }
-    @font-face {
-        font-family: PTRegular;
-        src: url('${PTRegular}') format('opentype');
-    }
-    @font-face {
-        font-family: PTBold;
-        src: url('${PTBold}') format('opentype');
-    }
-    @font-face {
-        font-family: PTBoldItalic;
-        src: url('${PTBoldItalic}') format('opentype');
-    }
-    @font-face {
-        font-family: PTItalic;
-        src: url('${PTItalic}') format('opentype');
-    }
-`
+`;
 
 const getTitleFontType = p => {
-    if (p.bold) return 'AdelleBold';
-    else return 'AdelleRegular';
-}
+    return 'AdelleRegular, Verdana';
+};
 
 const getFontType = p => {
-    if (p.bold && p.italic) return 'PTBoldItalic';
-    else if (p.bold) return 'PTBold';
-    else if (p.italic) return 'PTItalic';
-    else return 'PTRegular';
-}
+    return 'TimesNewRoman';
+};
 
 export const getColour = p => {
     if (p.blue) return 'blue';
     else if (p.red) return 'red';
     else if (p.white) return 'white';
     else return 'rgba(0,0,0,0.7)';
-}
+};
 
 const getBGColour = p => {
     if (p.slatebg) return 'rgba(61, 73, 95, 0.75)';
@@ -85,7 +57,7 @@ const getBGColour = p => {
     else if (p.coralbg) return '#f5cfb3';
     else if (p.limebg) return '#d2f1d0';
     else return 'none';
-}
+};
 
 // Layout
 export const Container = styled.div`

@@ -18,6 +18,7 @@ const Home = styled.div`
 const HomeContent = styled(Wrapper)`
     max-width: 650px;
     text-align: justify;
+    line-height: 1.5rem;
 `;
 
 const Homepage = () => (
