@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-//
-// const Background = styled.div`
-//     position: fixed;
-//     height: 100%;
-//     width: 100%;
-//     z-index: -9999;
-//     background: linear-gradient(${p => p.bottomPage ? '135deg' : '45deg'}, #43c6ac, #f8ffae);
-//     transition: 2s all ease;
-// `;
+
+import { media }  from 'styles';
 
 const Background = styled.div`
     position: fixed;
@@ -17,9 +10,15 @@ const Background = styled.div`
     width: 100%;
     z-index: -9990;
     background: linear-gradient(45deg, #43c6ac, #f8ffae);
+    ${media.phone`
+        background: linear-gradient(0deg, #fff, rgba(255, 212, 0, 0.37));
+    `}
     &:before {
         display: block;
         background: linear-gradient(225deg, #43c6ac, #f8ffae);
+        ${media.phone`
+            background: linear-gradient(0deg, #fff, rgba(0, 243, 255, 0.37));
+        `}
         height: 100%;
         width: 100%;
         position: fixed;

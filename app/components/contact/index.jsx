@@ -50,6 +50,9 @@ const Lines = styled.div`
     flex-grow: 1;
     overflow: hidden;
     margin: 0 4px;
+    ${media.phone`
+        display: none;
+    `}
 `;
 
 function mapStateToProps(state) {
