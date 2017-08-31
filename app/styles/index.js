@@ -21,11 +21,7 @@ injectGlobal`
         height: 100%;
     }
     #root {
-        //background: linear-gradient(45deg, rgb(204, 103, 255), rgb(0, 208, 255));
-        background: linear-gradient(45deg, rgb(255, 181, 253), rgb(97, 255, 248));
-        ${media.desktop`
-            height: 100%;
-        `}
+        height: 100%;
     }
     a {
         text-decoration: none;
@@ -34,6 +30,19 @@ injectGlobal`
         font-family: AdelleRegular;
         src: url('${AdelleRegular}') format('opentype');
     }
+    @keyframes scrollPromptMove {
+        from { transform: translateX(-50%) translateY(0);}
+        to { transform: translateX(-50%) translateY(15px);}
+    }
+    @keyframes scrollPromptFlash {
+        0%, 100% {
+            opacity: 0;
+        }
+        50%, 80% {
+            opacity: 1;
+        }
+    }
+
 `;
 
 const getTitleFontType = p => {

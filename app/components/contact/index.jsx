@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { media, Wrapper, Container, Title, P, Text }  from 'styles';
 
@@ -9,11 +10,8 @@ const ContactPage = styled(Wrapper)`
     display: flex;
     justify-content: center;
     align-items: center;
-    ${media.phone`
-        align-items: flex-start;
-        height: calc(100% - 135px);
-        padding-top: 135px;
-    `}
+    opacity: ${p => p.nearBottomOfPage ? 1 : 0};
+    transition: 0.5s opacity;
 `;
 
 const ContactWrapper = styled(Wrapper)`
@@ -52,14 +50,17 @@ const Lines = styled.div`
     flex-grow: 1;
     overflow: hidden;
     margin: 0 4px;
-    ${media.phone`
-        display: none;
-    `}
 `;
 
-const Contact = () => (
-    <ContactPage overflowauto >
-        <ContactWrapper margin overflowauto flex justifycenter >
+function mapStateToProps(state) {
+    return {
+        nearBottomOfPage: state.scroll.nearBottomOfPage
+    };
+};
+
+const Contact = ({nearBottomOfPage}) => (
+    <ContactPage overflowauto nearBottomOfPage={nearBottomOfPage}>
+        <ContactWrapper margin overflowauto flex justifycenter>
             <ContactLink href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'>
                 <ContactType lightblack lead >Email</ContactType>
                 <Icon className="fa fa-envelope"></Icon>
@@ -88,4 +89,4 @@ const Contact = () => (
     </ContactPage>
 );
 
-export default Contact;
+export default connect(mapStateToProps, undefined)(Contact);

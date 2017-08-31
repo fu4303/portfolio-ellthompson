@@ -1,37 +1,19 @@
 import { render, h, Component } from 'preact';
 import React from 'react';
+import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import particleBackground from 'particle-background';
-
 import 'font-awesome/css/font-awesome.css';
+import styled from 'styled-components';
+
+import store from 'store';
 import { Wrapper }  from 'styles';
+import Background from 'components/background';
+import Homepage from 'components/homepage';
+import Contact from 'components/contact';
 
-import Homepage from 'pages/homepage';
-import Contact from 'pages/contact';
-
-import Header from 'components/header';
-import Footer from 'components/footer';
-
-class ParticleBackground extends Component {
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount() {
-        const { config } = this.props;
-        particleBackground(this.canvas, {
-            frames: 40,
-            particleCount: 100,
-            maxParticleDiameter: 160,
-        });
-    }
-    render() {
-        const { width, height } = this.props;
-        return (
-            <canvas ref={(c)=>this.canvas = c} width={width} height={height}></canvas>
-        );
-    }
-}
+import scrollEvent from 'scrollEvent';
+import 'preact/devtools';
 
 /*
  * Global Config
@@ -40,43 +22,29 @@ const CONFIG = {
     SHOW_BLOG: false
 };
 
+function mapStateToProps(state) {
+    return {
+        nearBottomOfPage: state.scroll.nearBottomOfPage
+    };
+};
+
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            backgroundWidth: 0,
-            backgroundHeight: 0,
-        };
-    }
     getChildContext() {
         return {
             CONFIG
         };
     }
-    componentDidMount() {
-        if (!/Mobi/.test(navigator.userAgent)) {
-            this.setState({
-                backgroundWidth: this.back.offsetWidth,
-                backgroundHeight: this.back.offsetHeight,
-            });
-        }
-    }
     render() {
-        const { backgroundWidth, backgroundHeight } = this.state;
         return (
             <Router>
                 <Wrapper height='100%'>
-                    { !/Mobi/.test(navigator.userAgent) &&
-                        <div ref={(c)=>this.back = c} style={{width: '100%', height: '100%', position: 'absolute'}}>
-                            { backgroundWidth > 0 &&
-                                <ParticleBackground width={`${backgroundWidth}px`} height={`${backgroundHeight}px`}/>
-                            }
-                        </div>
-                    }
-                    <Header/>
-                    <Route exact path='/' component={Homepage}/>
-                    <Route exact path='/contact' component={Contact}/>
-                    <Footer/>
+                    <Background/>
+                    <Wrapper height='100%'>
+                        <Homepage/>
+                    </Wrapper>
+                    <Wrapper height='100%'>
+                        <Contact/>
+                    </Wrapper>
                 </Wrapper>
             </Router>
         );
@@ -88,6 +56,11 @@ App.childContextTypes = {
 };
 
 render(
-    <App/>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
     document.getElementById('root')
 );
+
+// register global events
+scrollEvent(store);
