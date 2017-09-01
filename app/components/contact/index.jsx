@@ -12,6 +12,10 @@ const ContactPage = styled(Wrapper)`
     align-items: center;
     opacity: ${p => p.nearBottomOfPage ? 1 : 0};
     transition: 0.5s opacity;
+    ${media.phone`
+        padding: 0;
+        height: 100%;
+    `}
 `;
 
 const ContactWrapper = styled(Wrapper)`
@@ -21,13 +25,20 @@ const ContactWrapper = styled(Wrapper)`
     width: calc(100% - 48px);
     max-width: 650px;
     overflow: hidden;
+    ${media.phone`
+        justify-content: space-around;
+        height: 100%;
+        margin: 0;
+    `}
 `;
 
 const ContactLink = styled.a`
     display: flex;
     align-items: baseline;
     ${media.phone`
+        flex-direction: column;
         justify-content: space-between;
+        align-items: center;
     `}
 `;
 
@@ -35,15 +46,12 @@ const Icon = styled.i`
     font-size: 24px;
     display: none;
     ${media.phone`
-        display: block;
+        display: inline-block;
     `}
     color: rgba(0, 0, 0, 0.7);
 `;
 
 const ContactType = styled(P)`
-    ${media.phone`
-        display: none;
-    `}
 `;
 
 const Lines = styled.div`
@@ -65,26 +73,22 @@ const Contact = ({nearBottomOfPage}) => (
     <ContactPage overflowauto nearBottomOfPage={nearBottomOfPage}>
         <ContactWrapper margin overflowauto flex justifycenter>
             <ContactLink href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'>
-                <ContactType lightblack lead >Email</ContactType>
-                <Icon className="fa fa-envelope"></Icon>
+                <ContactType lightblack lead ><Icon className="fa fa-envelope"></Icon> Email</ContactType>
                 <Lines><Text lightblack lead >{'.'.repeat(500)}</Text></Lines>
                 <P lightblack lead >ellth92@gmail.com</P>
             </ContactLink>
             <ContactLink href='http://github.com/ellt92' target='_blank'>
-                <ContactType lightblack lead >Github</ContactType>
-                <Icon className="fa fa-github"></Icon>
+                <ContactType lightblack lead ><Icon className="fa fa-github"></Icon> Github</ContactType>
                 <Lines><Text lightblack lead >{'.'.repeat(500)}</Text></Lines>
                 <P lightblack lead >@ellt92</P>
             </ContactLink>
             <ContactLink href='http://linkedin.com/in/ellt92' target='_blank'>
-                <ContactType lightblack lead >LinkedIn</ContactType>
-                <Icon className="fa fa-linkedin"></Icon>
+                <ContactType lightblack lead ><Icon className="fa fa-linkedin"></Icon> LinkedIn</ContactType>
                 <Lines><Text lightblack lead >{'.'.repeat(500)}</Text></Lines>
                 <P lightblack lead >/in/ellt92</P>
             </ContactLink>
             <ContactLink href='http://twitter.com/ellt92' target='_blank'>
-                <ContactType lightblack lead >Twitter</ContactType>
-                <Icon className="fa fa-twitter"></Icon>
+                <ContactType lightblack lead ><Icon className="fa fa-twitter"></Icon> Twitter</ContactType>
                 <Lines><Text lightblack lead >{'.'.repeat(500)}</Text></Lines>
                 <P lightblack lead >@ellt92</P>
             </ContactLink>
