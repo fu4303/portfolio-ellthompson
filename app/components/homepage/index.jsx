@@ -25,14 +25,13 @@ const ScrollPrompt = styled.div`
     transform: translateX(-50%);
     text-align: center;
     i {
-        font-size: 30px;
+        font-size: 20px;
         position: absolute;
         left: 50%;
-        top: 15px;
+        top: 30px;
         animation: scrollPromptMove 3s infinite, scrollPromptFlash 3s infinite;
     }
     span {
-        font-style: italic;
     }
     opacity: ${p => p.nearTopOfPage ? 1 : 0};
     transition: 0.5s opacity;
@@ -53,7 +52,7 @@ const Homepage = ({nearTopOfPage}) => (
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>
-            <Text lightblack >Contact Info<i className="fa fa-chevron-down"></i></Text>
+            <Text lightblack title bold lead >Contact<i className="fa fa-chevron-down"></i></Text>
         </ScrollPrompt>
     </Home>
 );

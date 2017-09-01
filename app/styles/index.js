@@ -129,13 +129,14 @@ export const SubTitle = styled.h3`
 `;
 
 export const P = styled.p`
-    font-family: ${getFontType};
+    font-family: ${p => p.title ? getTitleFontType : getFontType};
     font-size: ${p => {
         if (p.lead) return '24px';
         else if (p.small) return '12px';
         else if (p.xsmall) return '8px';
         else return '16px';
     }};
+    font-weight: ${p => p.bold ? 'bold' : 'unset'};
     color: ${getColour};
     margin: 8px 0;
     ${media.phone`
@@ -154,6 +155,7 @@ export const Divider = styled.div`
 
 export const Text = styled.span`
     font-family: ${p => p.title ? getTitleFontType : getFontType};
+    font-weight: ${p => p.bold ? 'bold' : 'unset'};
     font-size: ${p => {
         if (p.sizetitle) return '40px';
         else if (p.sizesubtitle) return '32px';
