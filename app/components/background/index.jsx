@@ -9,18 +9,20 @@ const Background = styled.div`
     height: 100%;
     width: 100%;
     z-index: -9990;
+    box-shadow: inset 0px 0px 0px 6px #43c6ac;
     background: linear-gradient(45deg, #43c6ac, #f8ffae);
     ${'' /* background: linear-gradient(225deg, #22c1c3, #fdbb2d); */}
-    ${media.phone`
+    ${'' /* ${media.phone`
         background: linear-gradient(0deg, #fff, rgba(255, 212, 0, 0.37));
-    `}
+    `} */}
     &:before {
+        box-shadow: inset 0px 0px 0px 6px #f8ffae;
         display: block;
         background: linear-gradient(225deg, #43c6ac, #f8ffae);
         ${'' /* background: linear-gradient(45deg, #22c1c3, #fdbb2d); */}
-        ${media.phone`
+        ${'' /* ${media.phone`
             background: linear-gradient(0deg, #fff, rgba(0, 243, 255, 0.37));
-        `}
+        `} */}
         height: 100%;
         width: 100%;
         position: fixed;

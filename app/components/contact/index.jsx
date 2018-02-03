@@ -40,6 +40,7 @@ const ContactLink = styled.a`
         justify-content: space-between;
         align-items: center;
     `}
+    text-shadow: 2px 2px #f8ffae;
 `;
 
 const Icon = styled.i`

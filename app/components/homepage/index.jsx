@@ -28,13 +28,17 @@ const ScrollPrompt = styled.div`
         font-size: 20px;
         position: absolute;
         left: 50%;
-        top: 30px;
+        top: 0px;
         animation: scrollPromptMove 3s infinite, scrollPromptFlash 3s infinite;
     }
     span {
     }
     opacity: ${p => p.nearTopOfPage ? 1 : 0};
-    transition: 0.5s opacity;
+    transition: 0.2s opacity;
+`;
+
+const HomepageTitle = styled.span`
+    text-shadow: 2px 2px #f8ffae;
 `;
 
 function mapStateToProps(state) {
@@ -47,12 +51,12 @@ const Homepage = ({nearTopOfPage}) => (
     <Home height='100%'>
         <Container flex centerboth >
             <HomeContent nearTopOfPage={nearTopOfPage} margin >
-                <P lightblack ><Text title sizetitle >Hi there 👋</Text></P>
-                <P lightblack >I'm a software engineer with with a penchant for great digital design. I'm currently based in London and work for <a href='http://www.moo.com/uk' target='_blank'>MOO Print Ltd</a>. I have extensive experience across the full development stack, including mobile. I mainly code in Javascript (Node / React / Angular), Python and Java. I'm always keen to hear about new and interesting projects so don't hesitate to contact me!</P>
+                <P lightblack ><Text title sizetitle ><HomepageTitle>Hi there</HomepageTitle> 👋</Text></P>
+                <P lightblack title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I tend to write mainly in Javascript + Python. I'm always keen to hear about interesting projects and can be contacted below.</P>
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>
-            <Text lightblack title bold lead >Contact<i className="fa fa-chevron-down"></i></Text>
+            <Text tone2 lightblack title bold lead ><i className="fa fa-chevron-down"></i></Text>
         </ScrollPrompt>
     </Home>
 );

@@ -57,6 +57,8 @@ export const getColour = p => {
     if (p.blue) return 'blue';
     else if (p.red) return 'red';
     else if (p.white) return 'white';
+    else if (p.tone1) return '#43c6ac';
+    else if (p.tone2) return '#f8ffae';
     else return 'rgba(0,0,0,0.7)';
 };
 
