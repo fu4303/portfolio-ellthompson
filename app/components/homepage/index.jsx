@@ -52,7 +52,7 @@ const Homepage = ({nearTopOfPage}) => (
         <Container flex centerboth >
             <HomeContent nearTopOfPage={nearTopOfPage} margin >
                 <P lightblack ><Text title sizetitle ><HomepageTitle>Hi there</HomepageTitle> 👋</Text></P>
-                <P lightblack title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I tend to write mainly in Javascript + Python. I'm always keen to hear about interesting projects and can be contacted below.</P>
+                <P lightblack title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I'm mainly writing applications in Javascript and Python these days however I have experience in multiple languages. I'm always keen to hear about interesting projects and can be contacted below.</P>
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>
