@@ -38,7 +38,11 @@ const ScrollPrompt = styled.div`
 `;
 
 const HomepageTitle = styled.span`
-    text-shadow: 2px 2px #f8ffae;
+    text-shadow: 2px 2px #eaf0a4;
+`;
+
+const HomepageText = styled(P)`
+    text-shadow: 2px 2px #eaf0a4;
 `;
 
 function mapStateToProps(state) {
@@ -51,8 +55,8 @@ const Homepage = ({nearTopOfPage}) => (
     <Home height='100%'>
         <Container flex centerboth >
             <HomeContent nearTopOfPage={nearTopOfPage} margin >
-                <P lightblack ><Text title sizetitle ><HomepageTitle>Hi there</HomepageTitle> 👋</Text></P>
-                <P lightblack title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I'm mainly writing applications in Javascript and Python these days however I have experience in multiple languages. I'm always keen to hear about interesting projects and can be contacted below.</P>
+                <P tone1dark ><Text title sizetitle tone1dark textshadow="tone2dark"><HomepageTitle>Hi there</HomepageTitle> 👋</Text></P>
+                <HomepageText tone1dark title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I'm mainly write applications using Javascript and Python however I have experience with various languages. I'm always keen to hear about interesting projects so feel free to contact me below.</HomepageText>
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>

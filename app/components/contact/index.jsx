@@ -40,7 +40,7 @@ const ContactLink = styled.a`
         justify-content: space-between;
         align-items: center;
     `}
-    text-shadow: 2px 2px #f8ffae;
+    text-shadow: 2px 2px #eaf0a4;
 `;
 
 const Icon = styled.i`
@@ -77,24 +77,24 @@ const Contact = ({nearBottomOfPage}) => (
     <ContactPage overflowauto nearBottomOfPage={nearBottomOfPage}>
         <ContactWrapper margin overflowauto flex justifycenter>
             <ContactLink href='mailto:ellth92@gmail.com?Subject=Hi%20Elliott!' target='_blank'>
-                <ContactType lightblack lead title bold ><Icon className="fa fa-envelope-square"></Icon> Email</ContactType>
-                <Lines><Text lightblack lead title >{'.'.repeat(500)}</Text></Lines>
-                <P lightblack lead title >ellth92@gmail.com</P>
+                <ContactType tone1dark lead title bold ><Icon className="fa fa-envelope-square"></Icon> Email</ContactType>
+                <Lines><Text tone1dark lead title >{'.'.repeat(500)}</Text></Lines>
+                <P tone1dark lead title >ellth92@gmail.com</P>
             </ContactLink>
             <ContactLink href='http://github.com/ellt92' target='_blank'>
-                <ContactType lightblack lead title bold ><Icon className="fa fa-github-square"></Icon> Github</ContactType>
-                <Lines><Text lightblack lead title >{'.'.repeat(500)}</Text></Lines>
-                <P lightblack lead title >@ellt92</P>
+                <ContactType tone1dark lead title bold ><Icon className="fa fa-github-square"></Icon> Github</ContactType>
+                <Lines><Text tone1dark lead title >{'.'.repeat(500)}</Text></Lines>
+                <P tone1dark lead title >@ellt92</P>
             </ContactLink>
             <ContactLink href='http://linkedin.com/in/ellt92' target='_blank'>
-                <ContactType lightblack lead title bold ><Icon className="fa fa-linkedin-square"></Icon> LinkedIn</ContactType>
-                <Lines><Text lightblack lead title >{'.'.repeat(500)}</Text></Lines>
-                <P lightblack lead title >/in/ellt92</P>
+                <ContactType tone1dark lead title bold ><Icon className="fa fa-linkedin-square"></Icon> LinkedIn</ContactType>
+                <Lines><Text tone1dark lead title >{'.'.repeat(500)}</Text></Lines>
+                <P tone1dark lead title >/in/ellt92</P>
             </ContactLink>
             <ContactLink href='http://twitter.com/ellt92' target='_blank'>
-                <ContactType lightblack lead title bold ><Icon className="fa fa-twitter-square"></Icon> Twitter</ContactType>
-                <Lines><Text lightblack lead title >{'.'.repeat(500)}</Text></Lines>
-                <P lightblack lead title >@ellt92</P>
+                <ContactType tone1dark lead title bold ><Icon className="fa fa-twitter-square"></Icon> Twitter</ContactType>
+                <Lines><Text tone1dark lead title >{'.'.repeat(500)}</Text></Lines>
+                <P tone1dark lead title >@ellt92</P>
             </ContactLink>
         </ContactWrapper>
     </ContactPage>

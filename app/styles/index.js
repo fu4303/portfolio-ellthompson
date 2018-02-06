@@ -58,7 +58,9 @@ export const getColour = p => {
     else if (p.red) return 'red';
     else if (p.white) return 'white';
     else if (p.tone1) return '#43c6ac';
+    else if (p.tone1dark) return 'rgba(36, 108, 94, 1)';
     else if (p.tone2) return '#f8ffae';
+    else if (p.tone2dark) return '#eaf0a4';
     else return 'rgba(0,0,0,0.7)';
 };
 
@@ -121,6 +123,7 @@ export const Title = styled.h1`
     font-size: 40px;
     margin: 24px 0 8px;
     color: ${getColour};
+    ${p => p.textshadow? getTextShadow : ''};
 `;
 
 export const SubTitle = styled.h3`
