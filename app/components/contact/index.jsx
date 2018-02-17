@@ -13,7 +13,7 @@ const ContactPage = styled(Wrapper)`
     opacity: ${p => p.nearBottomOfPage ? 1 : 0};
     transition: 0.5s opacity;
     ${media.phone`
-        padding: 0;
+        padding: 0px;
         height: 100%;
     `}
 `;
