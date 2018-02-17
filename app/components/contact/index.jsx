@@ -49,7 +49,6 @@ const Icon = styled.i`
     ${media.phone`
         display: inline-block;
     `}
-    color: rgba(0, 0, 0, 0.7);
 `;
 
 const ContactType = styled(P)`

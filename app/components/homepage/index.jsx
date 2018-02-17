@@ -42,7 +42,7 @@ const HomepageTitle = styled.span`
 `;
 
 const HomepageText = styled(P)`
-    text-shadow: 2px 2px #eaf0a4;
+    text-shadow: 1px 1px #eaf0a4;
 `;
 
 function mapStateToProps(state) {
@@ -56,7 +56,7 @@ const Homepage = ({nearTopOfPage}) => (
         <Container flex centerboth >
             <HomeContent nearTopOfPage={nearTopOfPage} margin >
                 <P tone1dark ><Text title sizetitle tone1dark textshadow="tone2dark"><HomepageTitle>Hi there</HomepageTitle> 👋</Text></P>
-                <HomepageText tone1dark title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I'm mainly write applications using Javascript and Python however I have experience with various languages. I'm always keen to hear about interesting projects so feel free to contact me below.</HomepageText>
+                <HomepageText tone1dark title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I usually write software using Javascript and Python however I have experience with various languages. I'm always keen to hear about interesting projects so feel free to contact me below.</HomepageText>
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>
