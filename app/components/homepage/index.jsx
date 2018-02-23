@@ -20,18 +20,24 @@ const HomeContent = styled(Wrapper)`
 
 const ScrollPrompt = styled.div`
     position: absolute;
-    bottom: 50px;
+    bottom: 0px;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    a {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
+    }
     i {
-        font-size: 20px;
+        font-size: 30px;
         position: absolute;
         left: 50%;
         top: 0px;
         animation: scrollPromptMove 3s infinite, scrollPromptFlash 3s infinite;
-    }
-    span {
     }
     opacity: ${p => p.nearTopOfPage ? 1 : 0};
     transition: 0.2s opacity;
@@ -60,7 +66,7 @@ const Homepage = ({nearTopOfPage}) => (
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>
-            <Text tone2 lightblack title bold lead ><i className="fa fa-chevron-down"></i></Text>
+            <a href='#contact'><Text tone2 lightblack title bold lead ><i className="fa fa-chevron-down"></i></Text></a>
         </ScrollPrompt>
     </Home>
 );

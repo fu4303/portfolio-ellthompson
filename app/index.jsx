@@ -42,7 +42,7 @@ class App extends Component {
                     <Wrapper height='100%'>
                         <Homepage/>
                     </Wrapper>
-                    <Wrapper height='100%'>
+                    <Wrapper id='contact' height='100%'>
                         <Contact/>
                     </Wrapper>
                 </Wrapper>
