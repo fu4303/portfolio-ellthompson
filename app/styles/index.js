@@ -148,6 +148,7 @@ export const P = styled.p`
         text-align: ${p => p.center ? 'center' : 'justify'};
     `}
     text-align: ${p => p.center ? 'center' : 'none'};
+    ${p => p.nowrap ? 'white-space: nowrap;' : ''}
 `;
 
 export const Divider = styled.div`

@@ -90,10 +90,10 @@ const Contact = ({nearBottomOfPage}) => (
                 <Lines><Text tone1dark lead title >{'.'.repeat(500)}</Text></Lines>
                 <P tone1dark lead title >/in/ellt92</P>
             </ContactLink>
-            <ContactLink href='http://twitter.com/ellt92' target='_blank'>
-                <ContactType tone1dark lead title bold ><Icon className="fa fa-twitter-square"></Icon> Twitter</ContactType>
+            <ContactLink href='https://docs.google.com/document/d/19640Og0vWjnXd7V8286G2SZHAZ2l8OZlXJfVgX_7dHM/edit?usp=sharing' target='_blank'>
+                <ContactType tone1dark lead title bold ><Icon className="fa fa-file-text"></Icon> CV</ContactType>
                 <Lines><Text tone1dark lead title >{'.'.repeat(500)}</Text></Lines>
-                <P tone1dark lead title >@ellt92</P>
+                <P tone1dark lead title nowrap >Elliott Thompson</P>
             </ContactLink>
         </ContactWrapper>
     </ContactPage>

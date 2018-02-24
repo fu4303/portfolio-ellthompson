@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import copy from 'text.json';
 
 import { media, Wrapper, Container, Title, Text, P }  from 'styles';
 
@@ -61,8 +62,8 @@ const Homepage = ({nearTopOfPage}) => (
     <Home height='100%'>
         <Container flex centerboth >
             <HomeContent nearTopOfPage={nearTopOfPage} margin >
-                <P tone1dark ><Text title sizetitle tone1dark textshadow="tone2dark"><HomepageTitle>Hi there</HomepageTitle> 👋</Text></P>
-                <HomepageText tone1dark title>I'm a software engineer with a penchant for digital design. My experience extends across the full development stack. I usually write software using Javascript and Python however I have experience with various languages. I'm always keen to hear about interesting projects so feel free to contact me below.</HomepageText>
+                <P tone1dark ><Text title sizetitle tone1dark textshadow="tone2dark"><HomepageTitle>{copy.homepageTitle}</HomepageTitle></Text></P>
+                <HomepageText tone1dark title>{copy.homepageParagraph}</HomepageText>
             </HomeContent>
         </Container>
         <ScrollPrompt nearTopOfPage={nearTopOfPage}>
