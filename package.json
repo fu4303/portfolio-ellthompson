@@ -14,8 +14,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "particle-background": "^1.0.8",
-    "preact": "^8.2.1",
-    "preact-compat": "^3.17.0",
+    "preact": "^10.0.4",
     "prop-types": "^15.5.8",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.0.0",
