@@ -28,7 +28,6 @@ const Styling = styled.img`
   position: fixed;
   background-size: cover;
   background-position: center;
-  image-rendering: pixelated;
   width: 50%;
   min-width: 400px;
   margin-top: -50px;
