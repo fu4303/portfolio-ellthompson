@@ -57,9 +57,13 @@ class AnimatedBoxComponent extends Component {
     console.log(this.state.image);
   }
   render() {
+    console.log(images);
     const { image } = this.state;
     return (
       <Wrap>
+        {Object.keys(images).map(i => {
+          return <link rel="preload" href={images[i]} as="image" />;
+        })}
         <Styling src={image}>Hello World</Styling>
       </Wrap>
     );
