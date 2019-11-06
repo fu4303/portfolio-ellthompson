@@ -22,6 +22,9 @@ const Wrap = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
+  ${media.phone`
+    display: none;
+    `};
 `;
 
 const Styling = styled.img`
@@ -49,7 +52,7 @@ class AnimatedBoxComponent extends Component {
   }
   componentWillUpdate(nextProps, nextState) {
     let imageIndex =
-      1000 + Math.floor(nextProps.position / window.innerHeight * 30);
+      1000 + Math.floor(nextProps.position / (window.innerHeight * 0.9) * 30);
     console.log(imageIndex);
     this.setState({
       image: images[`Comp${imageIndex}.png`]

@@ -36,6 +36,7 @@ const ContactLink = styled.a`
   display: flex;
   align-items: baseline;
   width: 100%;
+
   ${media.phone`
         flex-direction: column;
         justify-content: space-between;
