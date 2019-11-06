@@ -14,8 +14,6 @@ function importAll(r) {
 
 importAll(require.context("assets/animation", false, /\.(png|jpg|svg)$/));
 
-console.log(images);
-
 const Wrap = styled.div`
   display: flex;
   justify-content: center;
@@ -53,11 +51,9 @@ class AnimatedBoxComponent extends Component {
   componentWillUpdate(nextProps, nextState) {
     let imageIndex =
       1000 + Math.floor(nextProps.position / (window.innerHeight * 0.9) * 30);
-    console.log(imageIndex);
     this.setState({
       image: images[`Comp${imageIndex}.png`]
     });
-    console.log(this.state.image);
   }
   render() {
     console.log(images);
