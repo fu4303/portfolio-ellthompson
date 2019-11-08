@@ -31,7 +31,7 @@ for i in range(0, 31):
         for y in range (0, int(image_arr.shape[1])):
             curr = image_arr[x][y]
             output_arr[x, y, 0:3] = curr
-            output_arr[x,y,3] = curr[0]
+            output_arr[x,y,3] = 1.0 - curr[0]
 
     if not os.path.exists('bin'):
         os.makedirs('bin')

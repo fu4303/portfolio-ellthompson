@@ -1,5 +1,39 @@
 {
   "homepageTitle": "Elliott Thompson",
   "homepageParagraph":
-    "Hi there 👋I'm a software engineer with a penchant for visual computing. My experience extends across the full development stack. I usually write software in Javascript and Python however I like to think of myself as a polyglot. I'm always keen to hear about interesting projects so feel free to contact me below."
+    "Hi there 👋I'm a software engineer with a penchant for visual computing. My experience extends across the full development stack. I usually write software in Javascript and Python however I like to think of myself as a polyglot. I'm always keen to hear about interesting projects so feel free to contact me.",
+  "projectList": [
+    {
+      "id": "rtiWebapp",
+      "title": "RTI Interactive WebApp",
+      "thumbnail": "thumbnail-rti-webapp.png",
+      "copy":
+        "For my master thesis I created an interactive web application that allows users to inspect reflectance transformation imaging panoramas. This required the streaming of gigabytes of image data and the implementation of complex curvature shading algorithms and geometry manipulation. It also required the implementation of optimisations such as image caching policies. The application was written in C++ and compiled down to JavaScript and WebGL using emscripten.",
+      "copyShort": "An interactive web app for viewing panoramic rti images",
+      "mediaType": "video",
+      "mediaUrl":
+        "https://drive.google.com/file/d/1D4m4lIlFcpDHL1tXVQQV5iWtrSmeMB7y/preview"
+    },
+    {
+      "id": "escapeRoom",
+      "title": "Escape Room VR",
+      "thumbnail": "thumbnail-escape-room-vr.png",
+      "copy":
+        "I contributed to a 10min long escape room video game in VR along with four other postgraduates at UCL. This was developed using Unity for the HTC Vive Pro. The demo video above shows a complete run-through of the game. We implemented haptic feedback, physical locomotion (flying) as well as 3D audio and visual puzzles.",
+      "copyShort": "A 10 minute virtual reality escape room experience",
+      "mediaType": "video",
+      "mediaUrl":
+        "https://drive.google.com/file/d/1TQV8NwkSOlxkC5OYK4BYYErpCb2BEC06/preview"
+    },
+    {
+      "id": "particleBackground",
+      "title": "Particle Background",
+      "thumbnail": "thumbnail-particle-background.png",
+      "copy":
+        "This open source library adds a particle effect as the background to any webpage. The library was written in CSS3 and JavaScript and runs using the HTML5 canvas element. This library can be found by visiting my github through the contact page.",
+      "copyShort": "A HTML5 particle background written in CSS3 and React",
+      "mediaType": "image",
+      "mediaUrl": "https://i.imgur.com/slLjenH.gif"
+    }
+  ]
 }

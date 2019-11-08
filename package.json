@@ -16,8 +16,9 @@
     "particle-background": "^1.0.8",
     "preact": "^10.0.4",
     "prop-types": "^15.5.8",
+    "react-awesome-slider": "github:ellt92/react-awesome-slider#master",
     "react-redux": "^5.0.6",
-    "react-router-dom": "^4.0.0",
+    "react-router-dom": "^5.1.2",
     "redux": "^3.7.2",
     "styled-components": "^1.4.4"
   },
